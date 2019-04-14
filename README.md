@@ -19,3 +19,58 @@ Microservices are small - each microservice implements only a small piece of an 
 </p>
 
 <h4> 1. Cloning the robot-shop git repo </h4>
+
+Switching to home directory.
+
+```javascript
+cd ~
+```
+![](images/1.png)
+
+Cloning robot-shop git repository. This repository contains ready-made YAML files that we can use to quickly and easy install the application.
+
+```javascript
+git clone https://github.com/linuxacademy/robot-shop.git
+```
+
+![](images/2.png)
+
+<h4> 2. Changing directory and going where all the YAML files are present </h4>
+
+```javascript
+cd robot-shop
+cd K8s
+cd descriptors
+```
+![](images/3.png)
+
+<h4> 3. Listing out the YAML files </h4>
+
+```javascript
+ls
+```
+![](images/4.png)
+
+<h4> 4. Creating a namespace called robot-shop </h4>
+
+```javascript
+kubectl create namespace robot-shop
+```
+![](images/5.png)
+
+<h4> 5. Installing the app </h4>
+
+Installing all the YAML files present under descriptors directory and installing the app under robot-shop namespace.
+
+```javascript
+kubectl -n robot-shop create -f ~/robot-shop/K8s/descriptors/
+```
+![](images/6.png)
+
+<h4> 6. Opening the app on the browser </h4>
+
+Grabbing the master node public IP address and pasting it in the URL along with the port number 30080.
+
+```javascript
+http://public_server_ip:30080
+```
