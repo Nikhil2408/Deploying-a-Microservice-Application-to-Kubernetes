@@ -75,3 +75,22 @@ Grabbing the master node public IP address and pasting it in the URL along with 
 http://public_server_ip:30080
 ```
 ![](images/7.png)
+
+This way I deployed a sample microservice application called Stan's Robot Shop to Kubernetes.
+
+To prove that each service can be scaled separately, I have done the following task on the same microservice application.
+
+<h4> 1. Scaling up the mongo-db deployment </h4>
+
+To scale the deployment, edit the the mongo-db deployment yaml file. 
+
+```javascript
+kubectl edit deployment mongo-db -n robot-shop
+```
+![](images/8.png)
+
+There will be some YAML describing the deployment object. Changing the replicas: 1 to replicas: 2 and saving the deployment exit.
+
+![](images/9.png)
+
+<h4> Checking the status of the deployment </h4>
