@@ -94,3 +94,7 @@ There will be some YAML describing the deployment object. Changing the replicas:
 ![](images/9.png)
 
 <h4> Checking the status of the deployment </h4>
+
+```javascript
+kubectl get deployments -n robot-shop
+```
