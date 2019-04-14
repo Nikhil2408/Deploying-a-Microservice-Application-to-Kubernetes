@@ -60,7 +60,7 @@ kubectl create namespace robotname
 
 <h4> 5. Installing the app </h4>
 
-Installing all the YAML files present under descriptors directory and installing the app under robot-shop namespace.
+Installing all the YAML files present under descriptors directory and installing the app under robotname namespace.
 
 ```javascript
 kubectl -n robotname create -f ~/robot-shop/K8s/descriptors/
