@@ -74,3 +74,4 @@ Grabbing the master node public IP address and pasting it in the URL along with 
 ```javascript
 http://public_server_ip:30080
 ```
+![](images/7.png)
