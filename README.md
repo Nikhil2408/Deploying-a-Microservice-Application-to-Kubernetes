@@ -89,7 +89,7 @@ kubectl edit deployment mongo-db -n robotname
 ```
 ![](images/8.png)
 
-There will be some YAML describing the deployment object. Changing the replicas: 1 to replicas: 2 and saving the deployment exit.
+There will be some YAML describing the deployment object. Changing the replicas: 1 to replicas: 2 and saving the deployment object.
 
 ![](images/9.png)
 
