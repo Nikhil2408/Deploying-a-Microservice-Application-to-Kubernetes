@@ -51,10 +51,10 @@ ls
 ```
 ![](images/4.png)
 
-<h4> 4. Creating a namespace called robot-shop </h4>
+<h4> 4. Creating a namespace called robotname </h4>
 
 ```javascript
-kubectl create namespace robot-shop
+kubectl create namespace robotname
 ```
 ![](images/5.png)
 
@@ -63,7 +63,7 @@ kubectl create namespace robot-shop
 Installing all the YAML files present under descriptors directory and installing the app under robot-shop namespace.
 
 ```javascript
-kubectl -n robot-shop create -f ~/robot-shop/K8s/descriptors/
+kubectl -n robotname create -f ~/robot-shop/K8s/descriptors/
 ```
 ![](images/6.png)
 
@@ -85,7 +85,7 @@ To prove that each service can be scaled separately, I have done the following t
 To scale the deployment, edit the the mongo-db deployment yaml file. 
 
 ```javascript
-kubectl edit deployment mongo-db -n robot-shop
+kubectl edit deployment mongo-db -n robotname
 ```
 ![](images/8.png)
 
@@ -93,8 +93,20 @@ There will be some YAML describing the deployment object. Changing the replicas:
 
 ![](images/9.png)
 
-<h4> Checking the status of the deployment </h4>
+<h4> 2. Checking the status of the deployment </h4>
 
 ```javascript
-kubectl get deployments -n robot-shop
+kubectl get deployments -n robotname
 ```
+![](images/10.png)
+
+The mongo-db deployment current replica has changed from 1 to 2 and remaining deployments remain unaffected.
+
+<h4> 3. Checking the status of the pods </h4>
+
+```javascript
+kubectl get pods -n robotname
+```
+![](images/11.png)
+
+The mongo-db deployment pods have changed from 1 to 2 and rest pods are still 1.
